@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+  
+{% block title %}Competitions{% endblock %}
+  
+{% block content %}
+<style> 
+    input[type=button], input[type=submit], input[type=reset] {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    </style>
+<h1 class="h2">Competitions</h1>
+<p>Welcome back, {{ account['name'] }}!</p>
+    <div class="card__content">
+      {%for row in data%}
+        <h5>
+          <b>{{row['c_competetion_name']}}</b>
+        </h5>
+        <p>
+            {{row['c_description']}}
+        </p>
+        
+        <div>
+          <p>ENTER COMP BELOW TO PARTICIPATE</p>
+          <form method="POST">
+            <input type='text' name='comp_id'>
+          </form>
+          
+      </div>
+      {% endfor %}
+      </div>  
+     
+  
+      
+{% endblock %}
